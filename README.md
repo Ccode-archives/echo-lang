@@ -5,6 +5,10 @@ A custom shell language made for educational purposes only.
 ```
 test:=1
 ```
+## print
+```
+print "test"
+```
 ## exit
 ```
 exit
