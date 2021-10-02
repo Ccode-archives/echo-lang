@@ -46,6 +46,9 @@ while True:
     # commands
     if inp == "exit":
         break
+    elif inp.startswith("print "):
+        com = inp.replace("print ", "")
+        print(com)
     else:
         if not ":=" in inp:
             print("syntax error")
