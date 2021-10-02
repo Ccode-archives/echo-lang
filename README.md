@@ -1,5 +1,5 @@
 # echo-lang
-A custom shell language made for educational purposes only. (May not work in some instances because of variable setting code.)
+A custom shell language made for educational purposes only.
 # How to use
 ## set var
 ```
