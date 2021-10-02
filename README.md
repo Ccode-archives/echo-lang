@@ -7,7 +7,7 @@ test:=1
 ```
 ## print
 ```
-print "test"
+print test
 ```
 ## exit
 ```
