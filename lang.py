@@ -37,7 +37,7 @@ while True:
     # replace varnames with values
     varcounter = 0
     for string in varnames:
-        inp = inp.replace(string, varvalues[varcounter])
+        inp = inp.replace(string + "$", varvalues[varcounter])
         varcounter += 1
     
     # debug
