@@ -1,2 +1,2 @@
 # new-lang
-Na
+A custom shell language made for educational purposes only.
