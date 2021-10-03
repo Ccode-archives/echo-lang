@@ -1,6 +1,8 @@
 variables = {}
 
 while True:
+    # debug
+    #print(variables)
     inp = input(">>").lstrip()
     variable_assigned = False
 
