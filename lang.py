@@ -23,11 +23,12 @@ while True:
 
         # commands
         if inp == "exit":
+            print("Exiting.")
             break
         elif inp.startswith("print "):
             print(inp[6:])
         elif not variable_assigned:
             print(f"syntax error - ({inp})")
     except:
-        print("\nThanks for coding")
+        print("\nExiting.")
         break
