@@ -35,7 +35,7 @@ while True:
                 print(f'{d}/')
             for f in files:
                 print(f)
-        elif keyword == "cd"):
+        elif keyword == "cd":
             targetdirectory = inp[3:]
             try:
                 os.chdir(targetdirectory)
