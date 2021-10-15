@@ -1,5 +1,6 @@
 import os
 import sys
+from math import *
 variables = {}
 
 while True:
@@ -31,8 +32,10 @@ while True:
             if not sys.argv[1] == "-c":
                 print("Exiting.")
             break
+            
         elif keyword == "print":
             print(inp[6:])
+            
         elif inp == "ls":
             directories = [f for f in os.listdir('.') if not os.path.isfile(f)]
             files = [f for f in os.listdir('.') if os.path.isfile(f)]
@@ -40,17 +43,38 @@ while True:
                 print(f'{d}/')
             for f in files:
                 print(f)
+                
+        elif keyword == "ls" and inp.strip() != "ls" :
+            targetdirectory = inp[3:]
+            try:
+                directories = [f for f in os.listdir(targetdirectory) if not os.path.isfile(f)]
+                files = [f for f in os.listdir(targetdirectory) if os.path.isfile(f)]
+                for d in directories:
+                    print(f'{d}/')
+                for f in files:
+                    print(f)
+            except:
+                print(f'Unable to locate directory to {targetdirectory}. Check if the directory exist?')
+        
+        elif inp == "pwd" :
+            print(os.getcwd())
+                
         elif keyword == "cd":
             targetdirectory = inp[3:]
             try:
-                os.chdir(targetdirectory)
-                if not sys.argv[1] == "-c":
-                    print("Directory changed to %s" % os.getcwd())
+                os.chdir(targetdirectory if targetdirectory else os.path.expanduser("~"))
+                print("Directory changed to %s" % os.getcwd())
             except:
                 print(f'Unable to change directory to {targetdirectory}. Does the directory exist?')
+        
+        elif keyword == "calc" :
+            expr = inp[5:]
+            print(expr, "=", eval(expr))
+        
         elif not variable_assigned:
             print(f"syntax error - ({inp})")
+        
+        print("-"*25)
     except:
-        if not sys.argv[1] == "-c":
-            print("\nExiting.")
+        print("Correct usage 'python3 lang.py -c'")
         break
