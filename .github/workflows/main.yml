@@ -21,9 +21,9 @@ jobs:
       - name: test shell
         run: printf "shell echo test shell\nexit\n" | python3 lang.py -c
       - name: test var
-        run: printf "hi:=wow\nprint wow$\nexit\n" | python3 lang.py -c
+        run: printf "hi:=wow\nprint hi$\nexit\n" | python3 lang.py -c
       - name: test cd
-        run: printf "shell mkdir test shell\ncd test\ncd ..\nexit\n" | python3 lang.py -c
+        run: printf "shell mkdir test shell\ncd test\npwd\ncd ..\nexit\n" | python3 lang.py -c
       - name: test ls
         run: printf "ls\nexit\n" | python3 lang.py -c
       - name: test calc
