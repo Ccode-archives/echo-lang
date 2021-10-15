@@ -44,7 +44,8 @@ while True:
             targetdirectory = inp[3:]
             try:
                 os.chdir(targetdirectory)
-                print("Directory changed to %s" % os.getcwd())
+                if not sys.argv[1] == "-c":
+                    print("Directory changed to %s" % os.getcwd())
             except:
                 print(f'Unable to change directory to {targetdirectory}. Does the directory exist?')
         elif not variable_assigned:
