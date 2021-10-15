@@ -56,6 +56,11 @@ while True:
         elif inp.startswith("shell ") and inp.endswith(" shell"):
             command = rchop(inp[6:], " shell")
             os.system(command)
+        elif keyword == "pwd":
+            print(os.getcwd())
+        elif keyword == "calc":
+            expr = inp[5:]
+            print(expr, "=", eval(expr))
         elif not variable_assigned:
             print(f"syntax error - ({inp})")
     except:
