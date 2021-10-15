@@ -1,11 +1,15 @@
 import os
+import sys
 variables = {}
 
 while True:
     # debug
     #print(variables)
     try:
-        inp = input(">>").lstrip()
+        if not sys.argv[1] == "-c":
+            inp = input(">>").lstrip()
+        else:
+            inp = input().lstrip()
         variable_assigned = False
         
         # replace variable names with values
