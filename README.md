@@ -1,5 +1,10 @@
 # echo-lang
 A custom shell language made for educational purposes only.
+# how to run a script
+As of now you need to run
+```bash
+cat filename.ech | python3 lang.py -c
+```
 # How to use
 ## set var
 ```
