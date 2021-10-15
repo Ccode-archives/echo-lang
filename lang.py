@@ -28,7 +28,8 @@ while True:
         keyword = inp.split(" ")[0]
         # commands
         if inp == "exit":
-            print("Exiting.")
+            if not sys.argv[1] == "-c":
+                print("Exiting.")
             break
         elif keyword == "print":
             print(inp[6:])
@@ -49,5 +50,6 @@ while True:
         elif not variable_assigned:
             print(f"syntax error - ({inp})")
     except:
-        print("\nExiting.")
+        if not sys.argv[1] == "-c":
+            print("\nExiting.")
         break
