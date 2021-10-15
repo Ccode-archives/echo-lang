@@ -2,6 +2,11 @@ import os
 import sys
 variables = {}
 
+def rchop(string, suffix):
+    if suffix and string.endswith(suffix):
+        return string[:-len(suffix)]
+    return string
+
 while True:
     # debug
     #print(variables)
@@ -48,6 +53,9 @@ while True:
                     print("Directory changed to %s" % os.getcwd())
             except:
                 print(f'Unable to change directory to {targetdirectory}. Does the directory exist?')
+        elif inp.startswith("shell ") and inp.endswith(" shell"):
+            command = rchop(inp[6:], " shell")
+            os.system(command)
         elif not variable_assigned:
             print(f"syntax error - ({inp})")
     except:
