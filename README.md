@@ -13,6 +13,14 @@ print test2$
 test$
 ```
 The code above when typed in will print "hello world" then exit the program.
+## change directory
+```
+cd directory-name
+```
+## list directories and files
+```
+ls
+```
 ## print
 ```
 print test
