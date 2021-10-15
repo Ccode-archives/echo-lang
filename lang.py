@@ -10,7 +10,7 @@ while True:
         if not sys.argv[1] == "-c":
             inp = input(">>").lstrip()
         else:
-            inp = input().lstrip()
+            inp = input(f"python@user:{os.getcwd()}$").lstrip()
         variable_assigned = False
         
         # replace variable names with values
@@ -28,7 +28,7 @@ while True:
         inp = inp or "No content"
         keyword = inp.split(" ")[0]
         # commands
-        if inp == "exit":
+        if inp in ("exit", "end", "quit"):
             if not sys.argv[1] == "-c":
                 print("Exiting.")
             break
@@ -69,7 +69,7 @@ while True:
         
         elif keyword == "calc" :
             expr = inp[5:]
-            print(expr, "=", eval(expr))
+            print(expr, "=", round(eval(expr), 8))
         
         elif not variable_assigned:
             print(f"syntax error - ({inp})")
