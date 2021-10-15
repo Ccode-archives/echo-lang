@@ -17,4 +17,4 @@ jobs:
 
       # Runs a single command to test print
       - name: test print
-        run: printf "print hi\nexit\n" | python3 lang.py
+        run: printf "print hi\nexit\n" | python3 lang.py -c
