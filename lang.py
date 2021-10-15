@@ -21,12 +21,12 @@ while True:
                 variable_assigned = True
         
         inp = inp or "No content"
-        
+        keyword = inp.split(" ")[0]
         # commands
         if inp == "exit":
             print("Exiting.")
             break
-        elif inp.startswith("print "):
+        elif keyword == "print":
             print(inp[6:])
         elif inp == "ls":
             directories = [f for f in os.listdir('.') if not os.path.isfile(f)]
@@ -35,7 +35,7 @@ while True:
                 print(f'{d}/')
             for f in files:
                 print(f)
-        elif inp.startswith("cd "):
+        elif keyword == "cd"):
             targetdirectory = inp[3:]
             try:
                 os.chdir(targetdirectory)
