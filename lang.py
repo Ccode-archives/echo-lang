@@ -7,11 +7,11 @@ while True:
     try:
         inp = input(">>").lstrip()
         variable_assigned = False
-
+        
         # replace variable names with values
         for var_name, var_value in variables.items():
             inp = inp.replace(f"{var_name}$", var_value)
-
+        
         # variable handler
         if ":=" in inp:
             var_name, *var_value = inp.split(":=")
@@ -19,9 +19,9 @@ while True:
             if ' ' not in var_name and var_value:
                 variables[var_name] = var_value
                 variable_assigned = True
-
+        
         inp = inp or "No content"
-
+        
         # commands
         if inp == "exit":
             print("Exiting.")
