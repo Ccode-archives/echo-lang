@@ -42,7 +42,7 @@ ls /path
 ```
 print test
 ```
-## calculate math
+## calculate math [similar to python expressions]
 ```
 calc 5+3
 ```
