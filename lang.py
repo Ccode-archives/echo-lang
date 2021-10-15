@@ -1,3 +1,4 @@
+import os
 variables = {}
 
 while True:
@@ -27,6 +28,20 @@ while True:
             break
         elif inp.startswith("print "):
             print(inp[6:])
+        elif inp == "ls":
+            directories = [f for f in os.listdir('.') if not os.path.isfile(f)]
+            files = [f for f in os.listdir('.') if os.path.isfile(f)]
+            for d in directories:
+                print(f'{d}/')
+            for f in files:
+                print(f)
+        elif inp.startswith("cd "):
+            targetdirectory = inp[3:]
+            try:
+                os.chdir(targetdirectory)
+                print("Directory changed to %s" % os.getcwd())
+            except:
+                print(f'Unable to change directory to {targetdirectory}. Does the directory exist?')
         elif not variable_assigned:
             print(f"syntax error - ({inp})")
     except:
