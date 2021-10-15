@@ -26,6 +26,14 @@ cd directory-name
 ```
 ls
 ```
+## calc
+```
+calc 1 + 2
+```
+## pwd
+```
+pwd
+```
 ## print
 ```
 print test
